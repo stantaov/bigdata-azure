@@ -1,6 +1,6 @@
 ## Prerequisite 
 
-### Load to PostgreSQL server and create database pagila
+### Log into PostgreSQL server and create a database pagila
 ### Use Cloud Shell to connect
 CREATE DATABASE pagila;
 
