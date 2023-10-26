@@ -51,5 +51,5 @@ In this project, there is no strict requirements for you to set a project packag
  - export AZCOPY_SPA_CLIENT_SECRET=<YOUR_APP_SECRET>
  - azcopy login --service-principal  --application-id application-id --tenant-id=tenant-id
 
-### FIX: workaround if you are getting keyring issue
+### FIX: workaround if you are getting an issue with keyring
  - keyctl session
