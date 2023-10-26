@@ -45,11 +45,11 @@ In this project, there is no strict requirements for you to set a project packag
 
 
 ### Use AAD to Authenticate
-azcopy login --tenant-id=<tenant-id>
+ - azcopy login --tenant-id=<tenant-id>
 
 ### Use Service Principal to Authenticate
-export AZCOPY_SPA_CLIENT_SECRET=<YOUR_APP_SECRET>
-azcopy login --service-principal  --application-id application-id --tenant-id=tenant-id
+ - export AZCOPY_SPA_CLIENT_SECRET=<YOUR_APP_SECRET>
+ - azcopy login --service-principal  --application-id application-id --tenant-id=tenant-id
 
 ### FIX: workaround if you are gwtting keyring issue
-keyctl session
+ - keyctl session
