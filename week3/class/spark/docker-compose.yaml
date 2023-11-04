@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  spark-master:
+    image: apache/spark:latest
+    command: /opt/spark/bin/spark-class org.apache.spark.deploy.master.Master
+    hostname: spark-master
+    environment:
+      - "SPARK_LOCAL_IP=spark-master"
+    ports:
+      - "8080:8080"  # Spark Master UI
+      - "7077:7077"  # Spark Master connection
+    volumes:
+      - ./my_spark_conf:/opt/spark/conf
+      - ./spark-logs:/tmp/spark-events
+
+  spark-worker:
+    image: apache/spark:latest
+    command: /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
+    environment:
+      - "SPARK_LOCAL_IP=spark-worker"
+      - "SPARK_WORKER_MEMORY=2g"
+    links:
+      - spark-master
+    volumes:
+      - ./my_spark_conf:/opt/spark/conf
+      - ./spark-logs:/tmp/spark-events
+
+  spark-history-server:
+    image: apache/spark:latest
+    ports:
+      - "18080:18080"  # Spark History Server UI
+    command: /opt/spark/bin/spark-class org.apache.spark.deploy.history.HistoryServer
+    volumes:
+      - ./my_spark_conf:/opt/spark/conf
+      - ./spark-logs:/tmp/spark-events
