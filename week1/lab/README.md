@@ -28,8 +28,8 @@ In this project, there is no strict requirements for you to set a project packag
 ### Run the bach script
 3. ./Miniconda3-latest-Linux-x86_64.sh
 ### Activate Installation
-4.1 ~/miniconda3/bin/conda init bash (optional)
-4.2 source ~/.bashrc 
+- 4.1 ~/miniconda3/bin/conda init bash (optional)
+- 4.2 source ~/.bashrc 
 ### Verify Installation
 5. conda lists
 ### Add channel
